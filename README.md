@@ -24,8 +24,6 @@ colnames(X_merged)<- features[,2]
 mean_std_cols <- sort(c(grep("std",colnames(X_merged)),
                         grep("mean[\\(\\)]",colnames(X_merged))))
 X_mergedClean <- X_merged [,mean_std_cols]
-colnames(X_mergedClean)
-
 ```
 
 ### Uses descriptive activity names to name the activities in the data set
