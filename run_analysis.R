@@ -37,8 +37,8 @@ rm(X_merged)
 rm(mean_std_cols)
 
 # we add the subject
-subject_train <- read.table("~/1.Documents/Library/OCD-Data Science/Formacion/datasciencecoursera/3. Cleaning data/course project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt", quote="\"")
-subject_test <- read.table("~/1.Documents/Library/OCD-Data Science/Formacion/datasciencecoursera/3. Cleaning data/course project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt", quote="\"")
+subject_train <- read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/subject_train.txt", quote="\"")
+subject_test <- read.table("~getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/subject_test.txt", quote="\"")
 subject_merge <- rbind(subject_train,subject_test)
 X_mergedClean <- cbind(X_mergedClean,subject_merge)
 rm(subject_merge)
@@ -50,8 +50,8 @@ colnames(X_mergedClean)[67]<-"subject"
 # 1 WALKING; 2 WALKING_UPSTAIRS; 3 WALKING_DOWNSTAIRS;4 SITTING;5 STANDING;6 LAYING
 # - 'train/y_train.txt': Training labels.
 # - 'test/y_test.txt': Test labels.
-y_train <- read.table("~/1.Documents/Library/OCD-Data Science/Formacion/datasciencecoursera/3. Cleaning data/course project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt", quote="\"")
-y_test <- read.table("~/1.Documents/Library/OCD-Data Science/Formacion/datasciencecoursera/3. Cleaning data/course project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt", quote="\"")
+y_train <- read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/train/y_train.txt", quote="\"")
+y_test <- read.table("~getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/test/y_test.txt", quote="\"")
 y_merged <- rbind(y_train,y_test)
 
 X_mergedClean <- cbind(X_mergedClean,y_merged)
@@ -60,7 +60,7 @@ rm(y_test)
 rm(y_train)
 
 # reading the activity labels and merging with the X_mergedClean
-activity_labels <- read.table("~/1.Documents/Library/OCD-Data Science/Formacion/datasciencecoursera/3. Cleaning data/course project/getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt", quote="\"")
+activity_labels <- read.table("getdata-projectfiles-UCI HAR Dataset/UCI HAR Dataset/activity_labels.txt", quote="\"")
 X_mergedClean <- merge(X_mergedClean,activity_labels,by="V1")
 colnames(X_mergedClean)[69]<-"activity"
 colnames(X_mergedClean)[1]<-"activityID"
