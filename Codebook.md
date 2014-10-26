@@ -1,8 +1,13 @@
 Codebook
 ========================================================
-The final_dataset.txt is the result of running the script *run_analyis.R* to the dataset available at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The **final_dataset.txt** is the result of running the script *run_analyis.R* with the files of the dataset available at https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-**Please note that after the data processing, all values of the resulting dataset are averages per subject.**
+**Please note that after the data processing, all values of the resulting dataset are averages per subject and activity.** Thus the first two variables are:
+
+* subject
+* activity
+
+The rest of the values are explained below:
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals *time accelerometer-XYZ* and *time gyroscope-XYZ*. These time domain signals were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (*time body acceloremeter-XYZ* and *time Gravity acceloremeter-XYZ*) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
